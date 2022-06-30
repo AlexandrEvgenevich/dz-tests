@@ -47,7 +47,7 @@ def remove_doc_from_shelf(doc_number):
     for directory_number, directory_docs_list in directories.items():
         if doc_number in directory_docs_list:
             directory_docs_list.remove(doc_number)
-            break
+            return directories
 
 
 def add_new_shelf(shelf_number=''):
@@ -61,7 +61,7 @@ def add_new_shelf(shelf_number=''):
 
 def append_doc_to_shelf(doc_number, shelf_number):
     add_new_shelf(shelf_number)
-    directories[shelf_number].append(doc_number)
+    return directories[shelf_number].append(doc_number)
 
 
 def delete_doc():
